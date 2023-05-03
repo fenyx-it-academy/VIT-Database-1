@@ -29,7 +29,7 @@ SORULAR:
 
 12- Dunyanin nufusunu hesaplayiniz.
 
-13- Asya kitasinda kac adet ulke bulunmaktadir?
+13- Asya kitasinda kac ulke bulunmaktadir?
 
 14- En cok ulke bulunan kita hangisidir?
 
@@ -37,10 +37,10 @@ SORULAR:
 
 16- En dusuk nufuslu sehir(ler) hangisidir?
 
-17- Birden fazla resmi dili olan ulkeler hangileridir?
+17- Birden fazla resmi dili (IsOfficial -> T) olan ulkeler hangileridir?
  
 18- Ingilizcenin %90'dan fazla kullanildigi ulkeler hangileridir?
 
-19- Hem Ingilizcenin hem de Ispanyolcanin resmi dil oldugu ulkeler hangileridir?
+19- Hem Ingilizcenin hem de Ispanyolcanin resmi dil (IsOfficial -> T) oldugu ulkeler hangileridir?
 
-20- Ortalama yasam omru en yuksek 10 ulke hangileridir?
+20- Ortalama yasam suresi (LifeExpectancy) en yuksek 10 ulke hangileridir?
