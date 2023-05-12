@@ -26,7 +26,7 @@ Kullanilacak ogeler (tablolar):
 
 
 ## ODEV 3:
-Repo'da bulunan `world.sqlite` database dosyasini bilgisayariniza indirin. `DB Browser for Sqlite` programinda `Open Database` secenegi ile `world.sqlite` veritabanini acin ve asagidaki sorulara cevaplar verecek SQL querylerini (sorgularini) yazin. Eger cevaplariniz asagida verilen cevaplar ile eslesiyorsa, sorgunuz dogru demektir. Bir `cevaplar.txt` dosyasi olusturup her soru icin kullandiginiz SQL sorgunuzu ekleyin ve ardindan bu text dosyasini repoya yukleyin.
+Repo'da bulunan `world.sqlite` database dosyasini bilgisayariniza indirin. `DB Browser for Sqlite` programinda `Open Database` secenegi ile `world.sqlite` veritabanini acin ve asagidaki sorulara cevaplar verecek SQL querylerini (sorgularini) yazin. Bir `cevaplar.txt` dosyasi olusturup her soru icin kullandiginiz SQL sorgunuzu ekleyin ve ardindan bu text dosyasini repoya yukleyin.
 
 SORULAR:
 
