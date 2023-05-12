@@ -60,12 +60,12 @@ SORULAR:
 
 15- Dunya'nin en dusuk nufuslu ulkesi hangisidir?
 
-16- En dusuk nufuslu sehir(ler) hangisidir?
+16- En dusuk nufuslu 10 sehir hangisidir?
 
 17- Birden fazla resmi dili (IsOfficial -> T) olan ulkeler hangileridir?
  
-18- Ingilizcenin %90'dan fazla kullanildigi ulkeler hangileridir?
+18- Ingilizcenin %90'dan fazla kullanildigi ulkeler hangileridir? (Yalnizca ulke kodlari yeterli, join islemi yapmaniza gerek yoktur)
 
-19- Hem Ingilizcenin hem de Ispanyolcanin resmi dil (IsOfficial -> T) oldugu ulkeler hangileridir?
+19- Hem Ingilizce'nin hem de Fransizca'nin resmi dil (IsOfficial -> T) oldugu ulkeler hangileridir?
 
 20- Ortalama yasam suresi (LifeExpectancy) en yuksek 10 ulke hangileridir?
