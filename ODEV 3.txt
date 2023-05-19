@@ -1,0 +1,70 @@
+SORULAR:
+
+1- Nufusu 100 milyonun uzerinde olan ulkeler hangileridir?
+CEVAP = SELECT * FROM country WHERE Population>100000000;
+
+2- Isminin sonunda “land” kelimesi gecen ulkeler hangileridir?
+CEVAP = SELECT * FROM country WHERE name like '%land';
+
+3- 500 bin ile 1 milyon arasinda nufusu olan sehirler hangileridir?
+CEVAP = SELECT * FROM city WHERE Population>500000 AND Population<1000000;
+
+4- Avrupa (“Europe”) kitasinda bulunan ulkelerin tamamini bulunuz.
+CEVAP = SELECT * FROM country WHERE Continent = 'Europe';
+
+5- Tum ulkeleri yuzolcumleri buyukten kucuge olacak sekilde siralayaniz.
+CEVAP = SELECT * FROM country ORDER BY SurfaceArea DESC;
+
+6- Hollanda’nin (NLD) tum sehirlerini bulunuz.
+CEVAP = SELECT * FROM city WHERE CountryCode = 'NLD';
+
+7- Amsterdam’in nufusu kactir?
+CEVAP = SELECT Population FROM city WHERE name = 'Amsterdam';
+
+8- Afrika kitasinin (Africa) yuzolcumu en buyuk ulkesi hangisidir?
+CEVAP = SELECT name FROM country WHERE Continent = 'Africa' ORDER BY SurfaceArea DESC LIMIT 1;
+CEVAP2= SELECT name FROM country WHERE SurfaceArea = (SELECT MAX(SurfaceArea) FROM country WHERE Continent = "Africa");
+
+9- Asya (Asia) kitasinda yuzolcumune gore en buyuk 10 ulke hangileridir?
+CEVAP = SELECT name FROM country WHERE Continent = 'Asia' ORDER BY SurfaceArea DESC LIMIT 10;
+
+10- Yuzolcumu en kucuk olan ulkeyi bulunuz.
+CEVAP = SELECT name FROM country ORDER BY SurfaceArea ASC LIMIT 1;
+
+11- En kalabalik 10 sehri bulunuz.
+CEVAP = SELECT name FROM city ORDER by Population DESC LIMIT 10;
+
+12- Dunyanin nufusunu hesaplayiniz.
+CEVAP = SELECT sum(Population) FROM country;
+
+13- Asya kitasinda kac ulke bulunmaktadir?
+CEVAP = SELECT count() FROM country WHERE Continent = 'Asia';
+
+14- En cok ulke bulunan kita hangisidir?
+CEVAP = SELECT Continent, COUNT(*) AS NumberOfCountries
+FROM country
+GROUP BY Continent
+ORDER BY NumberOfCountries DESC
+LIMIT 1;
+
+15- Dunya'nin en dusuk nufuslu ulkesi hangisidir?
+CEVAP = SELECT name FROM country ORDER by Population ASC LIMIT 1;
+
+16- En dusuk nufuslu 10 sehir hangisidir?
+CEVAP = SELECT name FROM city ORDER by Population ASC LIMIT 10;
+
+17- Birden fazla resmi dili (IsOfficial -> T) olan ulkeler hangileridir?
+CEVAP = SELECT CountryCode, COUNT(*) AS OfficialLanguageCount
+FROM countrylanguage
+WHERE IsOfficial = 'T'
+GROUP BY CountryCode
+HAVING COUNT(*) > 1;
+
+18- Ingilizcenin %90'dan fazla kullanildigi ulkeler hangileridir? (Yalnizca ulke kodlari yeterli, join islemi yapmaniza gerek yoktur)
+CEVAP = SELECT CountryCode FROM countrylanguage WHERE Language = 'English' AND Percentage > 90;
+
+19- Hem Ingilizce'nin hem de Fransizca'nin resmi dil (IsOfficial -> T) oldugu ulkeler hangileridir?
+CEVAP = SELECT CountryCode FROM countrylanguage WHERE Language = 'English' AND 'French' IN (SELECT Language FROM countrylanguage WHERE IsOfficial = "T")
+
+20- Ortalama yasam suresi (LifeExpectancy) en yuksek 10 ulke hangileridir?
+CEVAP = SELECT name FROM country ORDER by LifeExpectancy DESC LIMIT 10
