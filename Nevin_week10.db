@@ -1,1 +1,12 @@
-
+cevap 1
+CREATE TABLE 'Employees'(
+'id' INTEGER not NULL PRIMARY KEY AUTOINCREMENT,
+'Employee_name' TEXT ,
+'Salary' INTEGER,
+'HireDate' date);
+CREATE TABLE 'Department'(
+'id' integer not null primary key autoincrement,
+'Department_Name' text);
+create table 'Position'(
+'id' integer not null primary key AUTOINCREMENT,
+'Position_Name' text)
