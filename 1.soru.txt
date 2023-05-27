@@ -1,0 +1,17 @@
+CREATE TABLE Employees (
+  EmployeeID INTEGER PRIMARY KEY,
+  Name TEXT,
+  HireDate DATE
+);
+
+CREATE TABLE Departments (
+  DepartmentID INTEGER PRIMARY KEY,
+  Department TEXT
+);
+
+CREATE TABLE Positions (
+  PositionID INTEGER PRIMARY KEY,
+  Position TEXT,
+  Salary TEXT,
+);
+
