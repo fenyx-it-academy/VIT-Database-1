@@ -16,7 +16,7 @@ Table: Employees
 
 ## ODEV 2:
 
-Bir kutuphane sisteminin ERD grafigini olusturunuz. (Dersteki orneknek yola cikarak benzeri bir ERD grafigi olusturabilirsiniz.)
+Bir kutuphane sisteminin ERD grafigini olusturunuz. (Dersteki ornekten yola cikarak benzeri bir ERD grafigi olusturabilirsiniz.)
 Kullanilacak ogeler (tablolar):
 - Kitaplar
 - Uyeler
