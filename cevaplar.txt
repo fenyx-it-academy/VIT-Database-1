@@ -1,0 +1,64 @@
+1- Nufusu 100 milyonun uzerinde olan ulkeler hangileridir?
+	SELECT * FROM country WHERE Population > 100000000
+
+2- Isminin sonunda “land” kelimesi gecen ulkeler hangileridir?
+	SELECT * FROM country WHERE name LIKE "%land"
+
+3- 500 bin ile 1 milyon arasinda nufusu olan sehirler hangileridir?
+	SELECT * FROM city WHERE Population BETWEEN 500000 AND 1000000
+
+4- Avrupa (“Europe”) kitasinda bulunan ulkelerin tamamini bulunuz.
+	SELECT * FROM country WHERE Continent = "Europe"
+
+5- Tum ulkeleri yuzolcumleri buyukten kucuge olacak sekilde siralayaniz.
+	SELECT * FROM country ORDER BY SurfaceArea DESC
+
+6- Hollanda’nin (NLD) tum sehirlerini bulunuz.
+	SELECT * FROM city WHERE CountryCode = "NLD"
+
+7- Amsterdam’in nufusu kactir?
+	SELECT Population FROM city WHERE Name = "Amsterdam"
+
+8- Afrika kitasinin (Africa) yuzolcumu en buyuk ulkesi hangisidir?
+	SELECT name FROM country WHERE SurfaceArea = (SELECT MAX(SurfaceArea) FROM country WHERE Continent = "Africa");
+
+9- Asya (Asia) kitasinda yuzolcumune gore en buyuk 10 ulke hangileridir?
+	SELECT name FROM country WHERE Continent = "Asia" ORDER BY SurfaceArea DESC LIMIT 10;
+
+10- Yuzolcumu en kucuk olan ulkeyi bulunuz.
+	SELECT name FROM country ORDER BY SurfaceArea ASC LIMIT 1;
+
+11- En kalabalik 10 sehri bulunuz.
+	SELECT name FROM city ORDER BY Population DESC LIMIT 10
+
+12- Dunyanin nufusunu hesaplayiniz.
+	SELECT SUM(Population) FROM country;
+
+13- Asya kitasinda kac ulke bulunmaktadir?
+	SELECT COUNT(*) FROM country WHERE continent = "Asia"
+
+14- En cok ulke bulunan kita hangisidir?
+	SELECT Continent, COUNT(*) AS NumCountries
+    FROM country
+    GROUP BY Continent
+    ORDER BY NumCountries DESC
+    LIMIT 1;
+
+15- Dunya'nin en dusuk nufuslu ulkesi hangisidir?
+	SELECT name FROM country ORDER BY Population ASC LIMIT 1
+
+16- En dusuk nufuslu 10 sehir hangisidir?
+	SELECT name FROM city ORDER BY Population ASC LIMIT 10
+
+17- Birden fazla resmi dili (IsOfficial -> T) olan ulkeler hangileridir?
+	 SELECT Name FROM country WHERE Code IN 
+	(SELECT CountryCode FROM countrylanguage WHERE IsOfficial = "T")
+	
+18- Ingilizcenin %90'dan fazla kullanildigi ulkeler hangileridir? (Yalnizca ulke kodlari yeterli, join islemi yapmaniza gerek yoktur)
+	SELECT CountryCode FROM countrylanguage WHERE Language = "English" AND Percentage>90
+
+19- Hem Ingilizce'nin hem de Fransizca'nin resmi dil (IsOfficial -> T) oldugu ulkeler hangileridir?
+	SELECT CountryCode FROM countrylanguage WHERE Language = "English" AND "French" IN (SELECT Language FROM countrylanguage WHERE IsOfficial = "T")
+
+20- Ortalama yasam suresi (LifeExpectancy) en yuksek 10 ulke hangileridir?
+	SELECT Name From country ORDER BY LifeExpectancy DESC LIMIT 10
